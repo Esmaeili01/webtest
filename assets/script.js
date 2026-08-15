@@ -2,7 +2,7 @@
 const categoryContainer = document.getElementById('categoryContainer');
 const itemsContainer = document.getElementById('itemsContainer');
 
-// --- Fetch Data from JSON file (with cache-busting) ---
+// --- Fetch Data from JSON (with cache-busting) ---
 fetch('assets/menu-data.json?t=' + Date.now())
     .then(response => {
         if (!response.ok) {
@@ -11,7 +11,6 @@ fetch('assets/menu-data.json?t=' + Date.now())
         return response.json();
     })
     .then(data => {
-        // The JSON should have a "categories" array
         const menuData = data.categories;
         if (!menuData || menuData.length === 0) {
             itemsContainer.innerHTML = `<div class="empty-state">⏳ هیچ دسته‌بندی یافت نشد</div>`;
@@ -23,7 +22,7 @@ fetch('assets/menu-data.json?t=' + Date.now())
     .catch(error => {
         console.error('Error loading menu:', error);
         itemsContainer.innerHTML = `
-            <div class="empty-state">❌ خطا: فایل menu-data.json پیدا نشد یا فرمت آن اشتباه است</div>
+            <div class="empty-state">❌ خطا: فایل menu-data.json پیدا نشد</div>
         `;
     });
 
@@ -48,7 +47,7 @@ function renderCategories(menuData) {
     });
 }
 
-// --- Render Items for a specific category ---
+// --- Render Items (Prices are completely removed) ---
 function renderItems(menuData, categoryId) {
     const category = menuData.find(c => c.id === categoryId);
     if (!category) return;
@@ -67,16 +66,13 @@ function renderItems(menuData, categoryId) {
         return;
     }
 
-    // Render each item
+    // Render each item WITHOUT price
     category.items.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'menu-item';
         itemDiv.innerHTML = `
-            <div class="item-info">
-                <span class="item-name">${item.name}</span>
-                <span class="item-desc">${item.desc}</span>
-            </div>
-            <span class="item-price">${item.price}</span>
+            <span class="item-name">${item.name}</span>
+            <span class="item-desc">${item.desc}</span>
         `;
         itemsContainer.appendChild(itemDiv);
     });
