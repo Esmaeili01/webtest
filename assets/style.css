@@ -1,0 +1,194 @@
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+    background: #f8f2e7;
+    color: #3e2723;
+    padding: 20px 12px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    max-width: 850px;
+    width: 100%;
+    background: #fefbf7;
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow: 0 20px 60px rgba(62, 39, 35, 0.10);
+    border: 1px solid #e8ddd0;
+}
+
+/* --- Header --- */
+.shop-header {
+    text-align: center;
+    border-bottom: 2px dashed #d7ccc8;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+.shop-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4e342e;
+}
+.shop-header h1 span {
+    color: #a1887f;
+}
+.shop-header p {
+    color: #795548;
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+/* --- BIG CATEGORY BOXES (Smaller & Tighter) --- */
+.categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Always 2 columns */
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.category-card {
+    background: #fcf8f5;
+    border: 2px solid #e8ddd0;
+    border-radius: 18px;
+    padding: 14px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(62, 39, 35, 0.10);
+    border-color: #bcaaa4;
+}
+.category-card.active {
+    background: #4e342e;
+    border-color: #4e342e;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(62, 39, 35, 0.20);
+}
+.category-card.active .cat-icon {
+    filter: brightness(10);
+}
+.category-card.active .cat-title {
+    color: #fff;
+}
+.category-card.active .cat-sub {
+    color: #d7ccc8;
+}
+
+.cat-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 4px;
+}
+.cat-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4e342e;
+    display: block;
+    line-height: 1.3;
+}
+.cat-sub {
+    font-size: 0.75rem;
+    color: #8d6e63;
+    display: block;
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+/* --- Menu Items Display Area --- */
+.items-section {
+    background: #fffcf9;
+    border-radius: 18px;
+    padding: 18px 15px;
+    border: 1px solid #efebe9;
+    min-height: 150px;
+}
+.items-section .section-title {
+    font-size: 1.5rem;
+    color: #5d4037;
+    border-right: 6px solid #8d6e63;
+    padding-right: 12px;
+    margin-bottom: 18px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid #efebe9;
+}
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-left: 12px;
+}
+.item-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #3e2723;
+}
+.item-desc {
+    font-size: 0.8rem;
+    color: #8d6e63;
+    margin-top: 2px;
+}
+.item-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #4e342e;
+    white-space: nowrap;
+}
+
+.empty-state {
+    text-align: center;
+    color: #bcaaa4;
+    padding: 20px 0;
+    font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 15px;
+    border-top: 2px dashed #d7ccc8;
+    color: #8d6e63;
+    font-size: 0.85rem;
+}
+
+/* --- EXTRA SMALL PHONES (like iPhone SE) --- */
+@media (max-width: 480px) {
+    body { padding: 10px 6px; }
+    .container { padding: 15px 10px; border-radius: 18px; }
+    
+    .shop-header h1 { font-size: 2rem; }
+    .shop-header p { font-size: 0.85rem; }
+    
+    .categories-grid { gap: 10px; }
+    .category-card { padding: 10px 6px; border-radius: 14px; }
+    .cat-icon { font-size: 1.7rem; }
+    .cat-title { font-size: 1rem; }
+    .cat-sub { font-size: 0.6rem; }
+    
+    .items-section { padding: 12px 10px; }
+    .items-section .section-title { font-size: 1.2rem; padding-right: 10px; }
+    
+    .menu-item { padding: 8px 0; flex-wrap: wrap; }
+    .item-name { font-size: 0.95rem; }
+    .item-desc { font-size: 0.7rem; }
+    .item-price { font-size: 0.95rem; margin-top: 3px; }
+}
