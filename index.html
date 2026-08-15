@@ -3,45 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Page</title>
+    <title>Brew & Bean ☕</title>
     <style>
+        /* --- Reset & Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f2e7;
+            color: #3e2723;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin: 0;
-            color: white;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #fefbf7;
+            border-radius: 30px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(62, 39, 35, 0.15);
+            border: 1px solid #e8ddd0;
+        }
+
+        /* --- Header --- */
+        .shop-header {
             text-align: center;
+            border-bottom: 2px dashed #d7ccc8;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
         }
-        .card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 50px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
-        h1 {
+        .shop-header h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #4e342e;
         }
-        p {
+        .shop-header h1 span {
+            color: #a1887f;
+        }
+        .shop-header p {
+            color: #795548;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* --- Menu Sections --- */
+        .menu-section {
+            margin-bottom: 35px;
+        }
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: #5d4037;
+            border-left: 6px solid #8d6e63;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Individual Items --- */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px solid #efebe9;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding-right: 15px;
+        }
+        .item-name {
+            font-weight: 600;
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: #3e2723;
         }
-        .emoji {
-            font-size: 4rem;
+        .item-desc {
+            font-size: 0.9rem;
+            color: #8d6e63;
+            margin-top: 2px;
+        }
+        .item-price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #4e342e;
+            white-space: nowrap;
+        }
+
+        /* --- Special Highlight (Seasonal) --- */
+        .seasonal {
+            background: #fff3e0;
+            padding: 15px 20px;
+            border-radius: 16px;
+            border-left: 6px solid #e65100;
+            margin-top: 15px;
+        }
+        .seasonal .item-name {
+            color: #bf360c;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #d7ccc8;
+            color: #8d6e63;
+            font-size: 0.95rem;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 500px) {
+            .container { padding: 25px 15px; }
+            .shop-header h1 { font-size: 2.2rem; }
+            .menu-item { flex-wrap: wrap; }
+            .item-price { margin-top: 5px; }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="emoji">🚀</div>
-        <h1>It's working!</h1>
-        <p>Your GitHub Page is live.</p>
-        <p style="font-size: 0.9rem; margin-top: 20px;">— Deployed with ❤️ —</p>
+    <div class="container">
+        <!-- Header -->
+        <header class="shop-header">
+            <h1>Brew & <span>Bean</span></h1>
+            <p>☕ Specialty Coffee & Fresh Pastries</p>
+        </header>
+
+        <!-- Coffee Menu -->
+        <section class="menu-section">
+            <h2>Hot Drinks</h2>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Espresso</span>
+                    <span class="item-desc">Rich, single-origin shot</span>
+                </div>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Americano</span>
+                    <span class="item-desc">Espresso with hot water</span>
+                </div>
+                <span class="item-price">$4.00</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Cappuccino</span>
+                    <span class="item-desc">Equal parts espresso, steamed milk & foam</span>
+                </div>
+                <span class="item-price">$5.25</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Latte</span>
+                    <span class="item-desc">Smooth espresso with creamy steamed milk</span>
+                </div>
+                <span class="item-price">$5.50</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Mocha</span>
+                    <span class="item-desc">Espresso, chocolate, and steamed milk</span>
+                </div>
+                <span class="item-price">$6.00</span>
+            </div>
+        </section>
+
+        <!-- Pastries -->
+        <section class="menu-section">
+            <h2>Pastries</h2>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Butter Croissant</span>
+                    <span class="item-desc">Flaky, golden, and buttery</span>
+                </div>
+                <span class="item-price">$4.50</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Almond Danish</span>
+                    <span class="item-desc">Filled with almond cream & toasted almonds</span>
+                </div>
+                <span class="item-price">$5.00</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Blueberry Muffin</span>
+                    <span class="item-desc">Fresh blueberries with streusel topping</span>
+                </div>
+                <span class="item-price">$4.75</span>
+            </div>
+        </section>
+
+        <!-- Seasonal Special -->
+        <div class="seasonal">
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">🍂 Pumpkin Spice Latte (Seasonal)</span>
+                    <span class="item-desc">Espresso, pumpkin puree, cinnamon & nutmeg</span>
+                </div>
+                <span class="item-price">$6.50</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            ⏰ Mon - Fri: 7am - 6pm &nbsp;|&nbsp; Sat - Sun: 8am - 4pm
+        </div>
     </div>
 </body>
 </html>
