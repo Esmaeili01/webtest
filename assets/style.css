@@ -41,7 +41,7 @@ body {
     margin-top: 3px;
 }
 
-/* --- Category Boxes (2 columns, compact) --- */
+/* --- Category Boxes (2 columns) --- */
 .categories-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -100,41 +100,58 @@ body {
     line-height: 1.2;
 }
 
-/* --- Items Display Area (No Prices) --- */
+/* --- Items Display Area (NOW A GRID - SIDE BY SIDE) --- */
 .items-section {
     background: #fffcf9;
     border-radius: 18px;
     padding: 18px 15px;
     border: 1px solid #efebe9;
     min-height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two items side by side */
+    gap: 15px;                     /* Space between cards */
 }
+
+/* The section title takes up the full top row */
 .items-section .section-title {
     font-size: 1.5rem;
     color: #5d4037;
     border-right: 6px solid #8d6e63;
     padding-right: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 0;
+    grid-column: 1 / -1;           /* Spans across both columns */
 }
 
+/* Each individual menu item is now a nice card */
 .menu-item {
+    background: #fcf8f5;
+    border: 1px solid #efebe9;
+    border-radius: 14px;
+    padding: 14px 12px;
+    text-align: center;
+    transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
-    border-bottom: 1px solid #efebe9;
+    justify-content: center;
 }
-.menu-item:last-child {
-    border-bottom: none;
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(62, 39, 35, 0.08);
+    border-color: #d7ccc8;
 }
 
 .item-name {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
     color: #3e2723;
+    display: block;
+    margin-bottom: 4px;
 }
 .item-desc {
     font-size: 0.8rem;
     color: #8d6e63;
-    margin-top: 2px;
+    display: block;
+    line-height: 1.3;
 }
 
 .empty-state {
@@ -142,6 +159,7 @@ body {
     color: #bcaaa4;
     padding: 20px 0;
     font-size: 1.1rem;
+    grid-column: 1 / -1;  /* Centers the empty message */
 }
 
 /* --- Footer --- */
@@ -168,10 +186,19 @@ body {
     .cat-title { font-size: 1rem; }
     .cat-sub { font-size: 0.6rem; }
     
-    .items-section { padding: 12px 10px; }
-    .items-section .section-title { font-size: 1.2rem; padding-right: 10px; }
-    
-    .menu-item { padding: 8px 0; }
-    .item-name { font-size: 0.95rem; }
-    .item-desc { font-size: 0.7rem; }
+    /* On small phones, items stack in 1 column */
+    .items-section {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+    .items-section .section-title {
+        font-size: 1.2rem;
+        padding-right: 10px;
+    }
+    .menu-item {
+        padding: 12px 10px;
+    }
+    .item-name { font-size: 1rem; }
+    .item-desc { font-size: 0.75rem; }
 }
