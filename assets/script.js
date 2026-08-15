@@ -47,7 +47,7 @@ function renderCategories(menuData) {
     });
 }
 
-// --- Render Items (Prices are completely removed) ---
+// --- Render Items (ABSOLUTELY NO PRICE ANYWHERE) ---
 function renderItems(menuData, categoryId) {
     const category = menuData.find(c => c.id === categoryId);
     if (!category) return;
@@ -66,7 +66,7 @@ function renderItems(menuData, categoryId) {
         return;
     }
 
-    // Render each item WITHOUT price
+    // Render ONLY name and description. NO price variable is used.
     category.items.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'menu-item';
