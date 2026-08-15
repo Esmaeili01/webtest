@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brew & Bean ☕</title>
+    <title>قهوه و دانه ☕</title>
+    <!-- Import Vazirmatn (Persian Font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* --- Reset & Base --- */
         * {
@@ -12,7 +17,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif;
             background: #f8f2e7;
             color: #3e2723;
             padding: 40px 20px;
@@ -52,19 +57,21 @@
             margin-top: 5px;
         }
 
-        /* --- Menu Sections --- */
+        /* --- Menu Sections (RTL Adjusted) --- */
         .menu-section {
             margin-bottom: 35px;
         }
         .menu-section h2 {
             font-size: 1.8rem;
             color: #5d4037;
-            border-left: 6px solid #8d6e63;
-            padding-left: 15px;
+            border-right: 6px solid #8d6e63;
+            border-left: none;
+            padding-right: 15px;
+            padding-left: 0;
             margin-bottom: 20px;
         }
 
-        /* --- Individual Items --- */
+        /* --- Individual Items (RTL: Price on left, Name+Desc on right) --- */
         .menu-item {
             display: flex;
             justify-content: space-between;
@@ -80,7 +87,8 @@
             display: flex;
             flex-direction: column;
             flex: 1;
-            padding-right: 15px;
+            padding-left: 15px;  /* spacing before price on the left */
+            padding-right: 0;
         }
         .item-name {
             font-weight: 600;
@@ -94,7 +102,7 @@
         }
         .item-price {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #4e342e;
             white-space: nowrap;
         }
@@ -104,7 +112,8 @@
             background: #fff3e0;
             padding: 15px 20px;
             border-radius: 16px;
-            border-left: 6px solid #e65100;
+            border-right: 6px solid #e65100;
+            border-left: none;
             margin-top: 15px;
         }
         .seasonal .item-name {
@@ -134,73 +143,81 @@
     <div class="container">
         <!-- Header -->
         <header class="shop-header">
-            <h1>Brew & <span>Bean</span></h1>
-            <p>☕ Specialty Coffee & Fresh Pastries</p>
+            <h1>قهوه و <span>دانه</span></h1>
+            <p>☕ قهوه‌های تخصصی و شیرینی‌های تازه</p>
         </header>
 
-        <!-- Coffee Menu -->
+        <!-- Hot Drinks Section -->
         <section class="menu-section">
-            <h2>Hot Drinks</h2>
+            <h2>نوشیدنی‌های گرم</h2>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Espresso</span>
-                    <span class="item-desc">Rich, single-origin shot</span>
+                    <span class="item-name">اسپرسو</span>
+                    <span class="item-desc">طعم غنی و اصیل، تک‌دانه</span>
                 </div>
-                <span class="item-price">$3.50</span>
+                <span class="item-price">۳۵,۰۰۰</span>
             </div>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Americano</span>
-                    <span class="item-desc">Espresso with hot water</span>
+                    <span class="item-name">آمریکانو</span>
+                    <span class="item-desc">اسپرسو با آب داغ</span>
                 </div>
-                <span class="item-price">$4.00</span>
+                <span class="item-price">۴۰,۰۰۰</span>
             </div>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Cappuccino</span>
-                    <span class="item-desc">Equal parts espresso, steamed milk & foam</span>
+                    <span class="item-name">کاپوچینو</span>
+                    <span class="item-desc">ترکیب متعادل اسپرسو، شیر بخار و کف</span>
                 </div>
-                <span class="item-price">$5.25</span>
+                <span class="item-price">۵۵,۰۰۰</span>
             </div>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Latte</span>
-                    <span class="item-desc">Smooth espresso with creamy steamed milk</span>
+                    <span class="item-name">لاته</span>
+                    <span class="item-desc">اسپرسوی نرم با شیر بخار لطیف</span>
                 </div>
-                <span class="item-price">$5.50</span>
+                <span class="item-price">۵۵,۰۰۰</span>
             </div>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Mocha</span>
-                    <span class="item-desc">Espresso, chocolate, and steamed milk</span>
+                    <span class="item-name">موکا</span>
+                    <span class="item-desc">اسپرسو، شکلات و شیر بخار</span>
                 </div>
-                <span class="item-price">$6.00</span>
+                <span class="item-price">۶۰,۰۰۰</span>
             </div>
         </section>
 
-        <!-- Pastries -->
+        <!-- Pastries Section -->
         <section class="menu-section">
-            <h2>Pastries</h2>
+            <h2>شیرینی‌ها</h2>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Butter Croissant</span>
-                    <span class="item-desc">Flaky, golden, and buttery</span>
+                    <span class="item-name">کروسان کره‌ای</span>
+                    <span class="item-desc">خمیر پوسته‌پوسته، طلایی و کره‌ای</span>
                 </div>
-                <span class="item-price">$4.50</span>
+                <span class="item-price">۴۵,۰۰۰</span>
             </div>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Almond Danish</span>
-                    <span class="item-desc">Filled with almond cream & toasted almonds</span>
+                    <span class="item-name">دانمارکی بادامی</span>
+                    <span class="item-desc">با خامه بادام و بادام بو داده</span>
                 </div>
-                <span class="item-price">$5.00</span>
+                <span class="item-price">۵۰,۰۰۰</span>
             </div>
+            
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">Blueberry Muffin</span>
-                    <span class="item-desc">Fresh blueberries with streusel topping</span>
+                    <span class="item-name">مافین بلوبری</span>
+                    <span class="item-desc">بلوبری تازه با رویه شکر و کره</span>
                 </div>
-                <span class="item-price">$4.75</span>
+                <span class="item-price">۴۷,۵۰۰</span>
             </div>
         </section>
 
@@ -208,16 +225,18 @@
         <div class="seasonal">
             <div class="menu-item">
                 <div class="item-info">
-                    <span class="item-name">🍂 Pumpkin Spice Latte (Seasonal)</span>
-                    <span class="item-desc">Espresso, pumpkin puree, cinnamon & nutmeg</span>
+                    <span class="item-name">🍂 لاته ادویه کدو (ویژه فصل)</span>
+                    <span class="item-desc">اسپرسو، پوره کدو، دارچین و جوز هندی</span>
                 </div>
-                <span class="item-price">$6.50</span>
+                <span class="item-price">۶۵,۰۰۰</span>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            ⏰ Mon - Fri: 7am - 6pm &nbsp;|&nbsp; Sat - Sun: 8am - 4pm
+            ⏰ شنبه تا پنجشنبه: ۷ تا ۱۸ &nbsp;|&nbsp; جمعه: ۸ تا ۱۶
+            <br>
+            <span style="font-size: 0.8rem;">تمامی قیمت‌ها به تومان</span>
         </div>
     </div>
 </body>
